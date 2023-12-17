@@ -6,7 +6,7 @@
 #A more in dept description about the program and what it does is available within the README.
 #
 import requests
-#checklist 10.3
+
 import re
 from bs4 import BeautifulSoup
 import numpy as np 
@@ -43,6 +43,9 @@ if history == "y".lower():
     civilization_soup = BeautifulSoup(civilization_page.content, "html.parser") #checklist 10.2
     type(civilization_page)
     #10.1 I want to scrape the names of all ancient civilizations and people for the user to look at if they say yes
+    #10.3 I went about scraping this webpage, by looking for the tables and rows, which should give me a long list of civilizations, when looking at 
+    #the webpage in particular this list can be seen off to the side, and alot of this code has guided by similar code given during lecture, so recalling 
+    #what that code was meant to do, I wanted to do something similar in mind for this. 
     civilization_table = civilization_soup.find("table")
     civilization_table
     civilization_th = civilization_table.find_all("th")
@@ -140,7 +143,7 @@ dict_famouscars = {
 "Brand": ["Honda", "Mercedes", "Toyota", "Audi", "McLaren"],
 "Model": ["Accord","W124", "FJ60", "Quattro", "F1"],
 "Year": ["1976","1985", "1980", "1983", "1992"] }
-#checklist 5.12 acess keys of a dictionary
+#checklist 5.17 acess keys of a dictionary
 dictkeys = dict_famouscars.keys()
 print(dictkeys)
 print(dict_famouscars)
