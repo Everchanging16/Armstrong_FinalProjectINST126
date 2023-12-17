@@ -15,8 +15,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 introduction = input("""Introduce yourself in this order: 
-                     Name, Age, Favorite Color, Favorite food
-                     """)
+Name, Age, Favorite Color, Favorite food
+""")
 #checklist 7.1 used a string method to split a string into a list of smaller strings. 
 #the split function is a built-in string method.
 introlist = introduction.split()
@@ -25,10 +25,6 @@ print(introlist)
 #Checklist 7.4 use regular exprssion to see a string matches certain pattern.
 if re.match(r"[A-Z]", introlist[0]):
     print(True)
-#checklist 7.5 use regular expressions with groupins to extract or change parts of a string
-result = re.search[r"\b[A-Z]+\b).+(\b\d+)", introlist[0]]
-print(result.groups())
-
 
 
 print("This creator of this program has a message:")
@@ -75,7 +71,7 @@ else:
 print("\n")
 
 
-pythonquiz = input("Would you like to test you python knowledge? (Y/N)")
+pythonquiz = input("Would you like to test you python knowledge? (Y/N): ")
 if pythonquiz == "y".lower():
     #checklist 7.3
     rawstring = r"Python\nis\so\hard\to\figure\out"
@@ -92,7 +88,8 @@ if pythonquiz == "y".lower():
         print("Congrats, you got that question right!")
     else:
         print("Sorry, looks like you got it wrong.")
-        
+
+print("\n")
 #Checklist: 8.2
 csvoption = input("Would you like to look at some famous locations from a readily available CSV file? (Y/N): ")
 if csvoption == "y".lower():
@@ -104,6 +101,7 @@ if csvoption == "y".lower():
     print(data.head())
     #Checklist 8.3
     #Let's try to use booleans on to see which latitude of each popular location is greater than 0.
+    print("Let's see which latitude of each popular location is greater than 0.")
     print(data['Latitude / Longitude'] > "0")
 
 
@@ -176,7 +174,7 @@ print(randomdict)
 #####
 #Checklist 5.12
 newtuple = ("Sophia", "Tyler", "Jamie")
-#checklist 5.13
+#checklist 5.13 (assigns each name to a individual variable, so x = "Sophia", etc.) 
 (x,y,z) = newtuple
 print(x)
 print(y)
